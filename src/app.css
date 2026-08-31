@@ -1,0 +1,280 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	/* JHAX brand tokens */
+	--jhax-black: #080808;
+	--jhax-card: #111111;
+	--jhax-border: #1e1e1e;
+	--jhax-orange: #e8500a;
+	--jhax-orange-light: #ff6b2b;
+	--jhax-orange-glow: rgba(232, 80, 10, 0.12);
+	--jhax-cream: #f5f2ed;
+	--jhax-muted: #6b6866;
+	--jhax-ghost: #333330;
+	--jhax-green: #16a34a;
+	--jhax-red: #dc2626;
+	--jhax-purple: #7c3aed;
+	--jhax-border-glow: rgba(232, 80, 10, 0.25);
+}
+
+@layer base {
+	:root {
+		--background: 0 0% 3%;
+		--foreground: 40 20% 94%;
+		--card: 0 0% 6.7%;
+		--card-foreground: 40 20% 94%;
+		--popover: 0 0% 6.7%;
+		--popover-foreground: 40 20% 94%;
+		--primary: 16 91% 47%;
+		--primary-foreground: 0 0% 100%;
+		--secondary: 0 0% 12%;
+		--secondary-foreground: 40 20% 94%;
+		--muted: 0 0% 12%;
+		--muted-foreground: 30 3% 42%;
+		--accent: 16 91% 47%;
+		--accent-foreground: 0 0% 100%;
+		--destructive: 0 72% 51%;
+		--destructive-foreground: 0 0% 98%;
+		--border: 0 0% 12%;
+		--input: 0 0% 12%;
+		--ring: 16 91% 47%;
+		--radius: 0.75rem;
+	}
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	background: var(--jhax-black);
+	color: var(--jhax-cream);
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family:
+		'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+	font-weight: 400;
+	overflow-x: hidden;
+}
+
+body {
+	background-image:
+		radial-gradient(1200px 600px at 80% -10%, rgba(232, 80, 10, 0.08), transparent 60%),
+		radial-gradient(900px 500px at -10% 40%, rgba(232, 80, 10, 0.04), transparent 60%);
+	background-attachment: fixed;
+}
+
+/* Film grain overlay */
+body::before {
+	content: '';
+	position: fixed;
+	inset: 0;
+	pointer-events: none;
+	opacity: 0.035;
+	mix-blend-mode: overlay;
+	z-index: 1;
+	background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.9'/></svg>");
+}
+
+/* App shell (from App.css) */
+.App {
+	background: var(--jhax-black);
+	color: var(--jhax-cream);
+	min-height: 100vh;
+	position: relative;
+	z-index: 0;
+}
+
+.font-display {
+	font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
+	font-weight: 800;
+	letter-spacing: -0.03em;
+	line-height: 0.92;
+}
+.font-mono {
+	font-family: 'JetBrains Mono', ui-monospace, monospace;
+	font-weight: 500;
+	letter-spacing: 0.02em;
+}
+.font-body {
+	font-family: 'Inter', sans-serif;
+}
+
+.text-cream {
+	color: var(--jhax-cream);
+}
+.text-muted-warm {
+	color: var(--jhax-muted);
+}
+.text-ghost {
+	color: var(--jhax-ghost);
+}
+.text-orange {
+	color: var(--jhax-orange);
+}
+.bg-jhax-black {
+	background: var(--jhax-black);
+}
+.bg-jhax-card {
+	background: var(--jhax-card);
+}
+.border-jhax {
+	border-color: var(--jhax-border);
+}
+.border-jhax-glow {
+	border-color: var(--jhax-border-glow);
+}
+
+/* Selection */
+::selection {
+	background: var(--jhax-orange);
+	color: #ffffff;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+::-webkit-scrollbar-track {
+	background: var(--jhax-black);
+}
+::-webkit-scrollbar-thumb {
+	background: #1a1a1a;
+	border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+	background: var(--jhax-orange);
+}
+
+/* Cursor for interactive */
+button,
+a,
+[role='button'] {
+	cursor: pointer;
+}
+
+/* Utility: mask reveal for hero lines */
+.mask-line {
+	display: inline-block;
+	overflow: hidden;
+	line-height: 1;
+	vertical-align: bottom;
+}
+
+/* Live dot pulse */
+@keyframes jhaxPulse {
+	0%,
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 0.35;
+		transform: scale(0.85);
+	}
+}
+.dot-pulse {
+	animation: jhaxPulse 1.8s ease-in-out infinite;
+}
+
+/* Orange glow border */
+.glow-border {
+	box-shadow:
+		0 0 0 1px rgba(232, 80, 10, 0.25),
+		0 20px 80px -20px rgba(232, 80, 10, 0.35);
+}
+
+/* Marquee */
+@keyframes jhaxMarquee {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+	100% {
+		transform: translate3d(-50%, 0, 0);
+	}
+}
+.marquee-track {
+	animation: jhaxMarquee 45s linear infinite;
+}
+
+/* Blinking caret */
+@keyframes jhaxCaret {
+	0%,
+	50% {
+		opacity: 1;
+	}
+	51%,
+	100% {
+		opacity: 0;
+	}
+}
+.caret {
+	display: inline-block;
+	width: 2px;
+	height: 1em;
+	background: var(--jhax-orange);
+	margin-left: 4px;
+	vertical-align: text-bottom;
+	animation: jhaxCaret 0.85s step-end infinite;
+}
+
+/* ACT badge pulse — subtle glow + scale */
+@keyframes actPulse {
+	0%,
+	100% {
+		box-shadow: 0 0 0 0 rgba(232, 80, 10, 0.55);
+		transform: scale(1);
+	}
+	50% {
+		box-shadow: 0 0 0 6px rgba(232, 80, 10, 0);
+		transform: scale(1.05);
+	}
+}
+.act-pulse {
+	animation: actPulse 1.6s ease-in-out infinite;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	.marquee-track,
+	.dot-pulse,
+	.caret,
+	.act-pulse {
+		animation: none !important;
+	}
+	* {
+		transition-duration: 0.001ms !important;
+	}
+}
+
+/* Grid pattern */
+.grid-pattern {
+	background-image:
+		linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+		linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+	background-size: 56px 56px;
+	background-position: -1px -1px;
+}
+
+/* Hero big number */
+.hero-headline {
+	font-family: 'Bricolage Grotesque', sans-serif;
+	font-weight: 800;
+	letter-spacing: -0.045em;
+	line-height: 0.88;
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+}

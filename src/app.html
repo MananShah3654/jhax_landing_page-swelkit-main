@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#080808" />
+		<meta
+			name="description"
+			content="JHAX.ai — Your AI COO for independent restaurants. Live on your POS. Stop guessing. Start running."
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+			rel="stylesheet"
+		/>
+		<title>JHAX.ai — Your restaurant. On autopilot.</title>
+		<script>
+			window.addEventListener(
+				'error',
+				function (e) {
+					if (
+						e.error instanceof DOMException &&
+						e.error.name === 'DataCloneError' &&
+						e.message &&
+						e.message.includes('PerformanceServerTiming')
+					) {
+						e.stopImmediatePropagation();
+						e.preventDefault();
+					}
+				},
+				true
+			);
+		</script>
+		<!--
+		  Emergent-platform integrations from the original project. These phone home
+		  to the Emergent platform (visual-edit injector + PostHog analytics with a
+		  hardcoded key). They are NOT landing-page features; left commented so the
+		  standalone app does not send telemetry by default. Uncomment to restore
+		  exact parity with the original head.
+
+		<script src="https://assets.emergent.sh/scripts/emergent-main.js"></script>
+		<script>
+			!(function (t, e) { ... posthog stub ... })(document, window.posthog || []);
+			posthog.init('phc_DbsPb39SRc8z3EiQ6Dhj6ikv4H4rTKcht9d4sZSesceP', {
+				api_host: 'https://ap.emergent.sh',
+				person_profiles: 'identified_only',
+				session_recording: { recordCrossOriginIframes: true, capturePerformance: false }
+			});
+		</script>
+		-->
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<noscript>You need to enable JavaScript to run this app.</noscript>
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
+</html>

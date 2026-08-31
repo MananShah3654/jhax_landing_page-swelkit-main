@@ -1,0 +1,16 @@
+{
+  "name": "jhax-functions",
+  "version": "1.0.0",
+  "description": "Google Maps short-link resolver for the JHAX free audit.",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": "20"
+  },
+  "dependencies": {
+    "firebase-functions": "^6.1.0",
+    "zod": "^4.4.3",
+    "@google/genai": "^2.19.0"
+  }
+}

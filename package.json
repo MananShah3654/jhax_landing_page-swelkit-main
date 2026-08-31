@@ -1,0 +1,40 @@
+{
+  "name": "jhax-landing-page-sveltekit",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "JHAX.ai landing page \u2014 fully static/serverless SvelteKit app. Google Places called from the browser; leads stored in Firebase Firestore. No backend database.",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "parity": "tsx scripts/parity/run.mjs",
+    "export:leads": "node scripts/export-leads.mjs",
+    "sync:functions": "node scripts/sync-functions-shared.mjs"
+  },
+  "devDependencies": {
+    "@google/genai": "^2.19.0",
+    "@sveltejs/adapter-static": "^3.0.6",
+    "@sveltejs/kit": "^2.8.3",
+    "@sveltejs/vite-plugin-svelte": "^4.0.2",
+    "autoprefixer": "^10.4.20",
+    "exceljs": "^4.4.0",
+    "firebase-admin": "^13.0.1",
+    "postcss": "^8.4.49",
+    "svelte": "^5.2.7",
+    "svelte-check": "^4.1.0",
+    "tailwindcss": "^3.4.15",
+    "tailwindcss-animate": "^1.0.7",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11",
+    "zod": "^4.4.3"
+  },
+  "dependencies": {
+    "firebase": "^11.0.2",
+    "jspdf": "^4.2.1",
+    "lenis": "^1.3.25",
+    "lucide-svelte": "^0.460.0"
+  }
+}

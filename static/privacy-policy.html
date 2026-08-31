@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#080808" />
+		<title>Privacy Policy — JHAX</title>
+		<meta
+			name="description"
+			content="How JHAX collects, uses, stores, shares and deletes your data — including Google account information and Gmail data accessed through the Gmail connector."
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,700;12..96,800&family=Inter:wght@300;400;500;600&display=swap"
+			rel="stylesheet"
+		/>
+		<style>
+			:root {
+				--bg: #080808;
+				--panel: #101010;
+				--line: #232323;
+				--text: #e7e5e4;
+				--muted: #a1a1aa;
+				--accent: #ff6b35;
+			}
+			* {
+				box-sizing: border-box;
+			}
+			html {
+				-webkit-text-size-adjust: 100%;
+			}
+			body {
+				margin: 0;
+				background: var(--bg);
+				color: var(--text);
+				font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+				font-size: 16px;
+				line-height: 1.7;
+				-webkit-font-smoothing: antialiased;
+			}
+			.wrap {
+				max-width: 46rem;
+				margin: 0 auto;
+				padding: 0 1.5rem;
+			}
+			header {
+				border-bottom: 1px solid var(--line);
+			}
+			header .wrap {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 1rem;
+				padding-top: 1.25rem;
+				padding-bottom: 1.25rem;
+			}
+			.brand {
+				display: inline-flex;
+				align-items: center;
+				gap: 0.65rem;
+				text-decoration: none;
+				color: var(--text);
+			}
+			.mark {
+				display: grid;
+				place-items: center;
+				width: 2.1rem;
+				height: 2.1rem;
+				border-radius: 0.65rem;
+				background: linear-gradient(180deg, #ff6b35, #e85d2a);
+				color: #fff;
+				font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+				font-weight: 800;
+				font-size: 1.05rem;
+			}
+			.brand span.name {
+				font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+				font-weight: 800;
+				font-size: 1.15rem;
+				letter-spacing: -0.02em;
+			}
+			header a.back {
+				color: var(--muted);
+				font-size: 0.875rem;
+				font-weight: 500;
+				text-decoration: none;
+			}
+			header a.back:hover {
+				color: var(--accent);
+			}
+			main {
+				padding: 3.5rem 0 4.5rem;
+			}
+			.eyebrow {
+				font-size: 0.7rem;
+				font-weight: 700;
+				letter-spacing: 0.2em;
+				text-transform: uppercase;
+				color: var(--accent);
+				margin: 0 0 0.6rem;
+			}
+			h1 {
+				font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+				font-weight: 800;
+				font-size: clamp(2rem, 6vw, 2.75rem);
+				letter-spacing: -0.03em;
+				line-height: 1.1;
+				margin: 0;
+			}
+			.meta {
+				color: var(--muted);
+				font-size: 0.875rem;
+				margin: 0.75rem 0 0;
+			}
+			h2 {
+				font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+				font-weight: 700;
+				font-size: 1.3rem;
+				letter-spacing: -0.02em;
+				margin: 3rem 0 0.9rem;
+				padding-top: 0.25rem;
+			}
+			h3 {
+				font-size: 0.78rem;
+				font-weight: 700;
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				color: var(--muted);
+				margin: 1.75rem 0 0.45rem;
+			}
+			p {
+				margin: 0 0 1rem;
+				color: #d4d4d8;
+			}
+			ul {
+				margin: 0 0 1rem;
+				padding-left: 1.2rem;
+			}
+			li {
+				margin-bottom: 0.5rem;
+				color: #d4d4d8;
+			}
+			strong {
+				color: var(--text);
+				font-weight: 600;
+			}
+			a {
+				color: var(--accent);
+				font-weight: 500;
+				text-decoration: none;
+			}
+			a:hover {
+				text-decoration: underline;
+			}
+			.callout {
+				border: 1px solid #3a2418;
+				background: #150e0a;
+				border-radius: 1rem;
+				padding: 1.5rem 1.5rem 0.75rem;
+				margin-top: 2rem;
+			}
+			.callout h2 {
+				margin-top: 0;
+			}
+			.table {
+				width: 100%;
+				border-collapse: collapse;
+				margin: 0 0 1rem;
+				font-size: 0.925rem;
+			}
+			.table th,
+			.table td {
+				text-align: left;
+				vertical-align: top;
+				padding: 0.7rem 0.9rem 0.7rem 0;
+				border-bottom: 1px solid var(--line);
+				color: #d4d4d8;
+			}
+			.table th {
+				color: var(--muted);
+				font-weight: 600;
+				font-size: 0.72rem;
+				letter-spacing: 0.09em;
+				text-transform: uppercase;
+			}
+			.scroller {
+				overflow-x: auto;
+			}
+			footer {
+				border-top: 1px solid var(--line);
+				margin-top: 3.5rem;
+				padding-top: 1.5rem;
+				color: var(--muted);
+				font-size: 0.875rem;
+			}
+			code {
+				font-family: ui-monospace, 'JetBrains Mono', 'SFMono-Regular', Menlo, monospace;
+				font-size: 0.875em;
+				background: var(--panel);
+				border: 1px solid var(--line);
+				border-radius: 0.35rem;
+				padding: 0.1rem 0.35rem;
+				color: #f4f4f5;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="wrap">
+				<a class="brand" href="/">
+					<span class="mark">J</span>
+					<span class="name">JHAX</span>
+				</a>
+				<a class="back" href="/">← Back to JHAX</a>
+			</div>
+		</header>
+
+		<main>
+			<div class="wrap">
+				<p class="eyebrow">Legal</p>
+				<h1>Privacy Policy</h1>
+				<p class="meta">Effective August 18, 2026 · Last updated August 18, 2026</p>
+
+				<h2>1. What JHAX does</h2>
+				<p>
+					JHAX is an AI operations assistant for restaurants and small businesses. It connects to
+					the systems a business already uses — its point of sale, its accounting software, its
+					review profiles and, if the owner chooses, its email — reads the data from those systems,
+					and turns it into dashboards, daily summaries, action items and plain-language answers
+					about how the business is doing.
+				</p>
+				<p>
+					This policy explains what information JHAX collects, why it collects it, how it is stored
+					and protected, who it is shared with, and how you can access or delete it. It applies to
+					the JHAX web application and to every service you connect to it.
+				</p>
+
+				<h2>2. Information we collect, and why</h2>
+				<div class="scroller">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>What we collect</th>
+								<th>Why we collect it</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong>Name</strong></td>
+								<td>
+									To identify your account, label your workspace, and attribute actions such as
+									tasks and notes to the right person.
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Email address</strong></td>
+								<td>
+									To create and sign you into your account, to send you service messages such as
+									daily summaries and alerts, and to reach you about your account.
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Phone number</strong> (only if you sign in by phone)</td>
+								<td>
+									To send a one-time verification code and confirm it is you. We store a hashed
+									PIN if you set one — never the PIN itself.
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Payment and transaction details</strong></td>
+								<td>
+									Orders, sales, payments, tips, refunds and the related item and customer records
+									read from the point-of-sale system you connect, plus bills and invoices from the
+									accounting system you connect. Used to produce your sales dashboards, financial
+									summaries, forecasts and the assistant's answers about revenue and costs.
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Google account information</strong> (when you use Google login)</td>
+								<td>
+									Your Google account identifier, name, email address and profile picture, received
+									through Google sign-in. Used only to create and authenticate your JHAX account —
+									we never receive your Google password.
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Gmail data</strong> (only if you connect the Gmail connector)</td>
+								<td>
+									Described in detail in section 3 below. Used to triage your inbox into action
+									items and, at your request, to send replies.
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Documents you upload</strong></td>
+								<td>
+									Bills, receipts and invoices you upload, including the original file or photo, so
+									JHAX can read their fields, check for duplicates and — on your confirmation —
+									record them in your accounting system.
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Technical and usage information</strong></td>
+								<td>
+									Log data, error reports and basic feature usage, to operate, secure and debug the
+									service.
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p>
+					<strong>We do not sell your data</strong>, and we do not use it for advertising or share
+					it with advertisers.
+				</p>
+				<p>
+					JHAX is not a payment processor. It reads transaction records from the systems you
+					connect; it does not take payments and does not store full card numbers or bank
+					credentials.
+				</p>
+
+				<div class="callout">
+					<h2>3. Gmail data and the Gmail connector</h2>
+					<p>
+						The Gmail connector is <strong>optional and off until you turn it on</strong>. You
+						enable it yourself from the Connectors page, and you grant access through Google's own
+						OAuth consent screen. We never see or store your Google password.
+					</p>
+
+					<h3>Scopes we request</h3>
+					<ul>
+						<li>
+							<code>https://www.googleapis.com/auth/gmail.readonly</code> — to read the messages
+							the assistant triages.
+						</li>
+						<li>
+							<code>https://www.googleapis.com/auth/gmail.send</code> — to send a reply when you
+							ask JHAX to send one. This scope can only send mail; it cannot read, label or delete
+							anything.
+						</li>
+					</ul>
+
+					<h3>What we access</h3>
+					<ul>
+						<li>Message metadata — sender, recipients, subject line and date.</li>
+						<li>Message content — the snippet and the plain-text body of the message.</li>
+						<li>
+							Attachments on those messages, where a message needs one to be understood (for
+							example an invoice PDF).
+						</li>
+					</ul>
+
+					<h3>Why we access it</h3>
+					<ul>
+						<li>
+							To triage recent mail and identify what actually needs the owner's attention, rather
+							than making you read everything.
+						</li>
+						<li>To turn actionable messages into tasks and action items inside JHAX.</li>
+						<li>To summarize threads and answer your questions about your inbox.</li>
+						<li>To draft and — only when you confirm — send a reply from your mailbox.</li>
+					</ul>
+
+					<h3>What we do not do</h3>
+					<ul>
+						<li>
+							We do not delete, label or otherwise modify your mailbox. We do not request the
+							<code>gmail.modify</code> scope.
+						</li>
+						<li>We do not sell, rent or transfer Gmail data, and we do not use it for advertising.</li>
+						<li>
+							We do not use Gmail data to train generalized artificial-intelligence or machine-learning
+							models.
+						</li>
+						<li>No human reads your mail, except where you ask us to for support or where the law requires it.</li>
+					</ul>
+
+					<h3>Limited Use</h3>
+					<p>
+						JHAX's use and transfer of information received from Google APIs adheres to the
+						<a
+							href="https://developers.google.com/terms/api-services-user-data-policy"
+							target="_blank"
+							rel="noopener noreferrer">Google API Services User Data Policy</a
+						>, including the Limited Use requirements.
+					</p>
+
+					<h3>Turning it off</h3>
+					<p>
+						You can disconnect Gmail at any time from the JHAX Connectors page, or revoke JHAX's
+						access directly at
+						<a
+							href="https://myaccount.google.com/permissions"
+							target="_blank"
+							rel="noopener noreferrer">myaccount.google.com/permissions</a
+						>. Either action stops all further access; we then delete the stored Gmail access and
+						refresh tokens.
+					</p>
+				</div>
+
+				<h2>4. How your data is stored and protected</h2>
+				<ul>
+					<li>
+						<strong>Encryption in transit.</strong> All traffic between you, JHAX and every service
+						we connect to travels over TLS/HTTPS.
+					</li>
+					<li>
+						<strong>Where it lives.</strong> The application runs on Google Cloud Run, and
+						application data is stored in a managed PostgreSQL database. Data is stored and
+						processed in the United States.
+					</li>
+					<li>
+						<strong>Credentials.</strong> OAuth access and refresh tokens for the services you
+						connect are stored server-side, are never exposed to the browser, and are used only to
+						make the calls described in this policy. Application secrets are held in Google Secret
+						Manager, not in code.
+					</li>
+					<li>
+						<strong>Authentication.</strong> Sign-in is handled by Google Firebase Authentication.
+						PINs, where used, are stored only as bcrypt hashes.
+					</li>
+					<li>
+						<strong>Access control.</strong> Each business's data is scoped to its own workspace.
+						Access to production data is limited to the people who need it to operate the service.
+					</li>
+				</ul>
+
+				<h2>5. AI processing</h2>
+				<p>
+					JHAX uses AI models to summarize your data, answer your questions, read fields from
+					documents you upload and transcribe voice input. To do that, the relevant content — a
+					receipt image, an email body, a computed data summary — is sent to our AI providers
+					(Google Gemini for text and vision, Groq for speech) solely to generate a response for
+					you. We do not permit these providers to use your content to train their models. AI output
+					is generated automatically and can be wrong; treat it as a starting point, not as
+					professional advice.
+				</p>
+
+				<h2>6. Third-party services we use</h2>
+				<p>
+					We share data only with the providers that make JHAX work, and only as far as the feature
+					requires. These are the services actually used by JHAX:
+				</p>
+				<ul>
+					<li>
+						<strong>Google Firebase Authentication</strong> — account creation and sign-in,
+						including Google login.
+					</li>
+					<li>
+						<strong>Google Cloud Platform</strong> (Cloud Run, Cloud Build, Secret Manager) —
+						hosting, deployment and secret storage for the application.
+					</li>
+					<li>
+						<strong>Managed PostgreSQL hosting</strong> (Google Cloud SQL / Neon) — the application
+						database.
+					</li>
+					<li>
+						<strong>Google Gmail API</strong> — the optional Gmail connector described in section 3.
+					</li>
+					<li>
+						<strong>Google Business Profile and Google Places</strong> — your business's ratings and
+						reviews.
+					</li>
+					<li>
+						<strong>Intuit QuickBooks Online</strong> — accounting data, read and (only on your
+						confirmation) written back.
+					</li>
+					<li>
+						<strong>The point-of-sale and payments provider you connect</strong> — for example
+						Square, Clover or Shift4 — to read the sales and transaction data you authorize.
+					</li>
+					<li>
+						<strong>Yelp</strong> — review and rating data, where you connect it.
+					</li>
+					<li>
+						<strong>Twilio</strong> — one-time passcodes and SMS notifications.
+					</li>
+					<li>
+						<strong>WhatsApp Business (Meta)</strong> — delivery of the daily business summary,
+						where you opt in. Nothing is read from WhatsApp.
+					</li>
+					<li>
+						<strong>Google Gemini</strong> and <strong>Groq</strong> — the AI providers described in
+						section 5.
+					</li>
+				</ul>
+				<p>
+					We may also disclose information where the law requires it, or where it is necessary to
+					protect the rights and safety of our users.
+				</p>
+
+				<h2>7. How long we keep your data</h2>
+				<p>
+					We keep your data for as long as your account is active, or as long as we need it to
+					provide the service. When you disconnect a service, we delete the stored credentials for
+					it. When you delete your account, we delete your account data and the connected data
+					cached alongside it, except where we are required to retain records by law.
+				</p>
+				<p>
+					Records that JHAX wrote into another system at your direction — for example a bill synced
+					to QuickBooks, or a reply sent from your mailbox — live in that system and are managed
+					there, not by JHAX.
+				</p>
+
+				<h2>8. Accessing or deleting your data</h2>
+				<p>You can, at any time:</p>
+				<ul>
+					<li>
+						<strong>Disconnect a service</strong> from the JHAX Connectors page — this stops all
+						further access and deletes the stored tokens for that service.
+					</li>
+					<li>
+						<strong>Request a copy</strong> of the personal information we hold about you, or ask us
+						to correct it.
+					</li>
+					<li>
+						<strong>Request deletion</strong> of your account and its associated data, including
+						cached data from connected services and any documents you uploaded.
+					</li>
+				</ul>
+				<p>
+					To make any of these requests, email
+					<a href="mailto:jhapayapp@gmail.com">jhapayapp@gmail.com</a> from the address on your
+					account. We will verify the request and action it within 30 days, and we will tell you if
+					anything must be retained for legal reasons.
+				</p>
+				<p>
+					Depending on where you live, you may also have the right to export your data, object to
+					certain processing, or withdraw consent. The same address handles those requests.
+				</p>
+
+				<h2>9. Children</h2>
+				<p>
+					JHAX is a business tool and is not intended for anyone under 18. We do not knowingly
+					collect data from children.
+				</p>
+
+				<h2>10. Changes to this policy</h2>
+				<p>
+					We may update this policy from time to time. When we do, we will revise the effective date
+					above and, for material changes, give additional notice.
+				</p>
+
+				<h2>11. Contact us</h2>
+				<p>
+					Questions about this policy, or about your data? Email
+					<a href="mailto:jhapayapp@gmail.com">jhapayapp@gmail.com</a>.
+				</p>
+
+				<footer>
+					<p>© 2026 JHAX. All rights reserved.</p>
+				</footer>
+			</div>
+		</main>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+rules_version = '2';
+
+// Firestore security rules for the JHAX landing page.
+// The `leads` collection is WRITE-ONLY from clients: anyone can submit a lead,
+// but no client can read, update, or delete leads (only trusted server/admin
+// access via the Admin SDK bypasses these rules). Basic field validation blocks
+// empty/spam submissions.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    match /leads/{leadId} {
+      allow read, update, delete: if false;
+
+      allow create: if isValidLead(request.resource.data);
+    }
+
+    function isValidLead(d) {
+      return
+        // exactly the fields the form writes — nothing extra
+        d.keys().hasOnly(['email', 'source', 'business_name', 'person_name', 'phone', 'created_at'])
+        // required
+        && d.keys().hasAll(['email', 'source', 'created_at'])
+        // email: non-empty string that looks like an address
+        && d.email is string
+        && d.email.size() >= 3
+        && d.email.size() <= 320
+        && d.email.matches('^[^@\\s]+@[^@\\s]+[.][^@\\s]+$')
+        // source: non-empty short string
+        && d.source is string
+        && d.source.size() > 0
+        && d.source.size() <= 64
+        // created_at: a timestamp (serverTimestamp() resolves to request.time)
+        && d.created_at is timestamp
+        // optional fields: string (bounded) or null
+        && (!('business_name' in d) || d.business_name == null || (d.business_name is string && d.business_name.size() <= 255))
+        && (!('person_name' in d) || d.person_name == null || (d.person_name is string && d.person_name.size() <= 255))
+        && (!('phone' in d) || d.phone == null || (d.phone is string && d.phone.size() <= 64));
+    }
+  }
+}

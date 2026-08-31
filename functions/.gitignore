@@ -1,0 +1,3 @@
+node_modules
+# Copied from src/lib at predeploy — never edit here, edit the source.
+shared/
